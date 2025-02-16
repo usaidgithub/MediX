@@ -1,0 +1,76 @@
+/* dashboard.css */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .dashboard-container {
+    min-height: 100vh;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .light-mode {
+    background-color: #f3f4f6;
+  }
+  
+  .dark-mode {
+    background-color: #111827;
+    color: white;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px;
+  }
+  
+  .dashboard-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 32px;
+    text-align: center;
+    color: #2563eb;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .dark-mode .dashboard-title {
+    color: #60a5fa;
+  }
+  
+  .grid-container {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .toggle-button {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    padding: 12px;
+    border-radius: 50%;
+    background: #2563eb;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .toggle-button:hover {
+    background: #1e40af;
+  }
+  

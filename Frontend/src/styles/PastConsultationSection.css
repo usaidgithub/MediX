@@ -1,0 +1,70 @@
+.consultations-container {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+  
+  .consultations-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-right: 0.5rem;
+  }
+  
+  .consultations-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .consultation-item {
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .consultation-item:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .consultation-date {
+    color: #374151;
+    font-weight: 500;
+  }
+  
+  .chevron-icon {
+    color: #9ca3af;
+  }
+  
+  .consultation-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f3f4f6;
+    border-radius: 6px;
+  }
+  
+  .consultation-details-title {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+  }
+  
+  .consultation-details-summary {
+    color: #6b7280;
+  }
+  
