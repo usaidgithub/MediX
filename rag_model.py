@@ -40,7 +40,7 @@ retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":
 # Setup LLM (Google Gemini API)
 os.environ["GOOGLE_API_KEY"] = GEMINI_API_KEY
 llm = ChatGoogleGenerativeAI(
-    model="gemini-pro",
+    model="gemini-1.5-pro-latest",
     temperature=0.4,
     max_output_tokens=500,
     google_api_key=os.getenv("GOOGLE_API_KEY")

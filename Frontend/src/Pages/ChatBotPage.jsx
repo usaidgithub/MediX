@@ -61,7 +61,7 @@ const ChatbotPage = () => {
         chatId,
         message: input,
       });
-      localStorage.setItem("chatId",response.data.chatId)
+      // localStorage.setItem("chatId",response.data.chatId)
       // Get bot response
       const botMessage = { text: response.data.answer, sender: 'bot' };
       
@@ -151,7 +151,6 @@ const ChatbotPage = () => {
       sender: msg.role
     }));
   
-    console.log("Formatted Messages:", formattedMessages);
     setMessages(formattedMessages);
     setIsSidebarOpen(false)
   };
@@ -165,7 +164,7 @@ const ChatbotPage = () => {
     <div className={`chat-container ${darkMode ? 'dark' : ''}`}>
       <div className="chat-header">
 
-          <Sidebar className='sidebar-toggle' size={24} onClick={toggleSidebar} />Chatbot
+          <Sidebar className='sidebar-toggle' size={24} onClick={toggleSidebar} />MedX AI
         <button className="theme-toggle" onClick={() => toggleDarkMode()}>
           {darkMode ? <Sun size={20} /> : <Moon size={20} />}
         </button>

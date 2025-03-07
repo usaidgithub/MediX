@@ -1,0 +1,78 @@
+.appointment-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .doctor-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .doctor-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .doctor-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .doctor-card h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .doctor-card .specialization {
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .doctor-card .experience {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .doctor-card .description {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .appointment-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .appointment-btn:hover {
+    background-color: #45a049;
+  }

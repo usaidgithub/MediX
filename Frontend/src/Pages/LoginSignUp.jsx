@@ -60,7 +60,7 @@ const LoginSignup = () => {
     <div className="login-signup-container">
       <div className="form-container">
         {error && <p className="error-message">{error}</p>}
-        <h1 className="title">MediBot AI</h1>
+        <h1 className="title">MedX AI</h1>
         <p className="subtitle">
           {isLogin ? 'Login to access your medical AI assistant' : 'Sign up for your medical AI assistant'}
         </p>

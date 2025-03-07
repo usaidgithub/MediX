@@ -114,6 +114,9 @@
     color: var(--text-light);
   }
 
+  button{
+    cursor: pointer;
+  }
   .chat-history-content.dark li:hover{
     background: #000;
   }

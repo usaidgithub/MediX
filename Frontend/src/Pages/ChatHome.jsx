@@ -8,7 +8,7 @@ export default function ChatHome() {
     <div className="homepage">
       {/* Navigation */}
       <nav className="navbar">
-        <div className="logo">ERR_6.0</div>
+        <div className="logo">MedX AI</div>
         {/* <ul className="nav-links">
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
@@ -36,8 +36,14 @@ export default function ChatHome() {
           </p>
 
           <div className="hero-buttons">
-            <button className="btn black-btn">Get Started</button>
-            <button className="btn outline-btn">Appointment</button>
+            <button onClick={() =>{
+          const token = localStorage.getItem('token')
+          if(token){
+           navigate("/chatbot")
+          }else{
+            navigate("/login")
+          }}}  className="btn black-btn">Get Started</button>
+            <button onClick={() => navigate("/appointment")} className="btn outline-btn">Appointment</button>
           </div>
 
           <div className="rating">
@@ -92,7 +98,13 @@ export default function ChatHome() {
             inquiries, provides health advice, and offers guidance based on
             symptoms, improving accessibility to healthcare information.
           </p>
-          <button>Get Started</button>
+          <button onClick={() =>{
+          const token = localStorage.getItem('token')
+          if(token){
+           navigate("/chatbot")
+          }else{
+            navigate("/login")
+          }}} >Get Started</button>
         </div>
         <div className="chat">
           <h1>Report Analysis</h1>
@@ -107,6 +119,14 @@ export default function ChatHome() {
         </div>
         <div className="chat">
           <h1>Medical Facility</h1>
+          <div className="underline"></div>
+          <p>
+Our system uses live location tracking to find the nearest hospitals, clinics, and pharmacies in real time. With instant access to emergency medical centers and pharmacies, you can quickly get the care and medicines you need.
+          </p>
+          <button onClick={() => window.location.href = "http://localhost:3000/map"}>
+  Get Started
+</button>
+
         </div>
       </section>
     </div>

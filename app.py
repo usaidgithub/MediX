@@ -36,7 +36,7 @@ retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":
 
 # Define LLM (Google Gemini)
 llm = ChatGoogleGenerativeAI(
-    model="gemini-pro",
+    model="gemini-1.5-pro-latest",
     temperature=0.4,
     max_output_tokens=500,
 )

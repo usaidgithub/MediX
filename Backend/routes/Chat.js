@@ -8,8 +8,8 @@ const router = Router();
 router.post("/", async(req, res) => { 
     const {token,message} = req.body
     let {chatId} = req.body
+
     const validToken = await verifyToken(token)
-    console.log(validToken)
     const userId = validToken.id
     const response = await axios.post(
         "http://127.0.0.1:8080/get",
@@ -21,7 +21,10 @@ router.post("/", async(req, res) => {
         }
     );   
     
-    const answer = response.data.answer;
+    let answer = response.data.answer;
+    if(answer ===""){
+        answer = "No context available"
+    }
     const chat = await Chat.findById(chatId)
     if(chat){
         chat.messages.push({role:"user",content:message})
@@ -29,12 +32,11 @@ router.post("/", async(req, res) => {
         await chat.save()
     }
     else{
-        console.log(userId,message,answer)
+    
         const newChat = new Chat({  
             userId: userId,
             messages: [{role:"user",content:message},{role:"bot",content:answer}]
         })
-        console.log(newChat)
 
         chatId = newChat._id
         await newChat.save()
