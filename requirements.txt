@@ -2,7 +2,7 @@ sentence-transformers==2.2.2
 langchain
 flask
 flask-cors
-guicorn
+gunicorn
 pypdf
 python-dotenv
 pinecone[grpc]
@@ -11,4 +11,4 @@ langchain_community
 langchain_openai
 langchain_experimental
 langchain-huggingface
--e .
+# -e .
