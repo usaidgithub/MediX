@@ -1,14 +1,31 @@
-sentence-transformers==2.2.2
-langchain
-flask
-flask-cors
+Flask
+Flask-Cors
 gunicorn
-pypdf
-python-dotenv
-pinecone[grpc]
+langchain
+langchain-community
+langchain-core
 langchain-pinecone
-langchain_community
-langchain_openai
-langchain_experimental
+langchain-google-genai
+sentence-transformers==2.2.2
+pinecone-client
+python-dotenv
+requests
+numpy
+scikit-learn
+pypdf
 langchain-huggingface
-# -e .
+
+# sentence-transformers==2.2.2
+# langchain
+# flask
+# flask-cors
+# gunicorn
+# pypdf
+# python-dotenv
+# pinecone[grpc]
+# langchain-pinecone
+# langchain_community
+# langchain_openai
+# langchain_experimental
+# langchain-huggingface
+# # -e .
