@@ -2,17 +2,18 @@ import { Router } from "express";
 import { verifyToken } from "../utils/jwt.js";
 import axios from "axios";
 import Chat from "../models/Chat.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 const router = Router();
 
 router.post("/", async(req, res) => { 
     const {token,message} = req.body
     let {chatId} = req.body
-
+    console.log("The chat id is",chatId);
     const validToken = await verifyToken(token)
     const userId = validToken.id
     const response = await axios.post(
-        "http://127.0.0.1:8080/get",
+        `${process.env.VITE_BACKEND_URL}/get`,
         { msg: message },
         {
             headers: {

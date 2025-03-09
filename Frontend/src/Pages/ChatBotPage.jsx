@@ -17,7 +17,7 @@ const ChatbotPage = () => {
   const [chatHistory, setChatHistory] = useState([]);
   const [darkMode, setDarkMode] = useState(localStorage.getItem("theme") === "dark");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [chatId,setChatId]= useState(localStorage.getItem("chatId"))
+  const [chatId,setChatId]= useState(null)
   const chatEndRef = useRef(null);
   const recognitionRef = useRef(null);
 
@@ -61,7 +61,9 @@ const ChatbotPage = () => {
         chatId,
         message: input,
       });
-      // localStorage.setItem("chatId",response.data.chatId)
+      if(chatId !== response.data.chatId){
+        localStorage.setItem("chatId",response.data.chatId)
+      }
       // Get bot response
       const botMessage = { text: response.data.answer, sender: 'bot' };
       
@@ -145,7 +147,8 @@ const ChatbotPage = () => {
   const handleChatClick = (chat) => {
     if (!chat || !chat.messages) return;
   
-    // Ensure messages are properly formatted
+    setChatId(chat._id)
+    localStorage.setItem("chatId",chat._id)
     const formattedMessages = chat.messages.map((msg) => ({
       text: msg.content,
       sender: msg.role
