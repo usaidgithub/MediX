@@ -47,6 +47,7 @@ prompt_template = (
     "Input: {input}\n\n"
     "Provide a response using the given context. Ensure clarity, correctness, "
     "and maintain the user's tone. Strictly use context information."
+    "If the context does not contain the answer, respond with 'I'm sorry, I don't know.'."
 )
 
 prompt = ChatPromptTemplate.from_template(prompt_template)
