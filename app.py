@@ -19,9 +19,8 @@ PINECONE_API_KEY = os.getenv('PINECONE_API_KEY')
 GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 
 # Set environment variables
-os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
-os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
-
+# os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
+# os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 # Load embeddings
 embeddings = download_hugging_face_embeddings()
 
@@ -36,9 +35,10 @@ retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":
 
 # Define LLM (Google Gemini)
 llm = ChatGoogleGenerativeAI(
-    model="gemini-1.5-pro-latest",
+    model="gemini-1.5-flash",
     temperature=0.4,
     max_output_tokens=500,
+     google_api_key=GOOGLE_API_KEY,
 )
 
 # Define Prompt
@@ -46,8 +46,7 @@ prompt_template = (
     "Context: {context}\n\n"
     "Input: {input}\n\n"
     "Provide a response using the given context. Ensure clarity, correctness, "
-    "and maintain the user's tone. Strictly use context information."
-    "If the context does not contain the answer, respond with 'I'm sorry, I don't know.'."
+    "and maintain the user's tone and be conversational. Strictly use context information."
 )
 
 prompt = ChatPromptTemplate.from_template(prompt_template)
